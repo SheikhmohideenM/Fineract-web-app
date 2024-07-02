@@ -1,0 +1,45 @@
+<div class="container mat-elevation-z8">
+  <h3 style="position: relative; display: flex; padding: 10px 10px 13px 500px">
+    {{ "labels.heading.Rebate Details" | translate }}
+  </h3>
+
+  <div fxLayout="row wrap" fxLayout.lt-md="column" style="padding: 10px 10px 40px 50px">
+    <div fxFlexFill>
+      <span fxFlex="50%">{{ "labels.inputs.Principle Amount" | translate }}</span>
+      <span fxFlex="50%">{{ loanData?.principal | currency: "$" }}</span>
+    </div>
+
+    <div fxFlexFill style="margin-top: 10px">
+      <span fxFlex="50%">{{ "labels.inputs.Annual Interest Rate" | translate }}</span>
+      <span fxFlex="50%">
+        {{ loanData?.interestRatePerPeriod }} %&nbsp;
+        {{ loanData?.interestRateFrequencyType.value | translateKey: "catalogs" }}
+      </span>
+    </div>
+
+    <div fxFlexFill style="margin-top: 10px">
+      <span fxFlex="50%">{{ "labels.inputs.Loan Terms In Days" | translate }}</span>
+      <span fxFlex="50%">{{ loanData?.repaymentSchedule.loanTermInDays }} days</span>
+    </div>
+
+    <div fxFlexFill style="margin-top: 10px">
+      <span fxFlex="50%">{{ "labels.inputs.Rebate Percentage" | translate }}</span>
+      <span fxFlex="50%">{{ rebateData?.rebatePercentage }}%</span>
+    </div>
+
+    <div fxFlexFill style="margin-top: 10px">
+      <span fxFlex="50%">{{ "labels.inputs.Transaction Date" | translate }}</span>
+      <span fxFlex="50%">{{ rebateData?.transactionDate }}</span>
+    </div>
+
+    <div fxFlexFill style="margin-top: 10px">
+      <span fxFlex="50%">{{ "labels.inputs.Rebate Amount" | translate }}</span>
+      <span fxFlex="50%">{{ rebateData?.rebateAmount }}</span>
+    </div>
+
+    <div fxFlexFill style="margin-top: 10px">
+      <span fxFlex="50%">{{ "labels.inputs.Note" | translate }}</span>
+      <span fxFlex="50%">{{ rebateData?.note }}</span>
+    </div>
+  </div>
+</div>
